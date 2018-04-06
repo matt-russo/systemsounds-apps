@@ -1,0 +1,64 @@
+
+@media (max-width: 1279px) {
+	.heading {
+		font-size: 16pt;
+		text-align: center;
+		padding-top: 0;
+	}
+}
+@media (max-width: 1099px) {
+	.heading {
+		margin: 10% 0;
+	}
+	.planet{
+		margin: 15% auto;
+	}
+	.conjunction {
+		margin: 10% auto;
+	}
+}
+@media (max-width: 799px) {
+	.volume_meter {
+		height: 15%;
+	}
+	.volume_meter p {
+		margin: 0;
+	}
+}
+@media (max-width: 699px) {
+	.heading {
+		font-size: 12pt;
+	}
+	p, span {
+		font-size: 10pt;
+	}
+	#tempo_heading, #melody_heading, #beat_heading {
+		width: 50px;
+	}
+	#bpm_meter {
+		width: 30px;
+	}
+	.planet{
+		margin: 10% auto;
+	}
+	.conjunction {
+		margin: 5% auto;
+	}
+}
+@media (max-width: 499px) {
+	.heading {
+		font-size: 10pt;
+	}
+	p, span {
+		font-size: 8pt;
+	}
+	#tempo_heading {
+		width: 40px;
+	}
+	#bpm_meter {
+		width: 20px;
+	}
+	.planet, .conjunction {
+		margin: 3% auto;
+	}
+}

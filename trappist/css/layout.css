@@ -1,0 +1,200 @@
+/* layout.css */
+
+.container {
+	width: 100%;
+	padding-bottom: 56.25%;
+	position: absolute;
+}
+#scene {
+	position: absolute;
+}
+#visualizer {
+	height: 18.75%;
+	bottom: -20%;
+	position: absolute;
+}
+.overlay {
+	position: absolute;
+}
+.overlay#tempo_display {
+	width: 100%;
+	top: 20px;
+	text-align: center;
+	font-size:24px;
+	font-weight: bold;
+}
+#tempo_heading {
+	width: 70px;
+	text-align: left;
+	display: inline-block;
+	padding-right:20px;
+}
+#bpm_meter {
+	width: 40px;
+	text-align: right;
+	display: inline-block;
+}
+.overlay#melody {
+	width: 10%;
+	max-width: 140px;
+	height: 100%;
+	left: 7%;
+	top: 5%;
+	font-weight: bold;
+}
+#melody_heading {
+	font-size:34px;
+}
+#beat_heading {
+	font-size:34px;
+	position:relative;
+	right:18px;
+}
+.planet, .conjunction {
+	margin: 5px auto;
+}
+.planet#b {
+	width: 96%;
+}
+.planet#c {
+	width: 94%;
+}
+.planet#d {
+	width: 68%;
+}
+.planet#e {
+	width: 81%;
+}
+.planet#f {
+	width: 92%;
+}
+.planet#g {
+	width: 100%;
+}
+.planet#h {
+	width: 67%;
+}
+.overlay#beat {
+	width: 10%;
+	max-width: 140px;
+	height: 100%;
+	right: 7%;
+	top: 5%;
+	font-weight: bold;
+}
+.conjunction {
+	width: 100%;
+}
+.imgbutton {
+	width: 100%;
+}
+.imgbutton:not(.hidden), .imgbutton:hover {
+	border-radius: 50%;
+	transition: box-shadow 0.3s ease;
+}
+#b_button, #bgrey_button:hover {
+	box-shadow: 0 0 5px 5px Red;
+}
+#c_button, #cgrey_button:hover {
+	box-shadow: 0 0 5px 5px Gold;
+}
+#d_button, #dgrey_button:hover {
+	box-shadow: 0 0 5px 5px ForestGreen;
+}
+#e_button, #egrey_button:hover {
+	box-shadow: 0 0 5px 5px LightSkyBlue;
+}
+#f_button, #fgrey_button:hover {
+	box-shadow: 0 0 5px 5px CornflowerBlue;
+}
+#g_button, #ggrey_button:hover {
+	box-shadow: 0 0 5px 5px Pink;
+}
+#h_button, #hgrey_button:hover {
+	box-shadow: 0 0 5px 5px RebeccaPurple;
+}
+#bc_button, #bcgrey_button:hover{
+	box-shadow: 0 0 5px 5px Red;
+}
+#cd_button, #cdgrey_button:hover{
+	box-shadow: 0 0 5px 5px Gold;
+}
+#de_button, #degrey_button:hover{
+	box-shadow: 0 0 5px 5px ForestGreen;
+}
+#ef_button, #efgrey_button:hover{
+	box-shadow: 0 0 5px 5px LightSkyBlue;
+}
+#fg_button, #fggrey_button:hover{
+	box-shadow: 0 0 5px 5px CornflowerBlue;
+}
+#gh_button, #ghgrey_button:hover {
+	box-shadow: 0 0 5px 5px Pink;
+}
+.buttons {
+	width: 50%;
+	position: absolute;
+}
+.overlay#beat .buttons {
+	width: 100%;
+}
+.volume_meter {
+	width: 180px;
+	height: 20%;
+	bottom: 0%;
+	position: absolute;
+	font-size:24px;
+	font-weight: bold;
+}
+#vol1 {
+	left: 0;
+	text-align: left;
+}
+#vol2 {
+	right: 0;
+	text-align: right;
+}
+#vol1_meter{
+	width: 60px;
+	text-align: right;
+	display: inline-block;
+}
+
+#vol2_meter {
+	width: 0px;
+	text-align: right;
+	display: inline-block;
+}
+
+#watermark {
+	width: 100%;
+	height: 10%;
+	bottom: -50px;
+	background: url('../images/watermark.png');
+	background-size: 20%;
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 0.3;
+}
+
+.footer {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	z-index: 150;
+	font-size: 16px;
+	color: rgba(255,255,255,0.9);
+	text-shadow: 0 1px 5px #000;
+	text-align: right;
+}
+.footer a {
+	color: #e66;
+}
+.footer img {
+	width: 10%;
+	opacity: 0.6;
+	transition: 0.1s all linear;
+}
+.footer img:hover {
+	opacity: 1;
+}

@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>TRAPPIST Sounds</title>
+	<link rel="stylesheet" href="css/general.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/mobile.css">
+	<link rel="stylesheet" href="css/sliders.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
+</head>
+<body>
+	<div class="container">
+		<canvas id="scene"></canvas>
+		<canvas id="visualizer"></canvas>
+
+		<!-- HUD overlay -->
+		<div class="overlay" id="watermark"></div>
+
+		<div class="overlay" id="tempo_display">
+			<span id="tempo_heading">TEMPO</span>
+			<input id="tempo" class='temposlider' type="range" min="1" max="100" step="1" value="30" oninput="updateSpeed([star,b,c,d,e,f,g,h], value)" />
+			<span id="bpm_meter"></span>
+		</div>
+
+		<div class="overlay" id="melody">
+			<div class="heading" id="melody_heading">NOTES</div>
+			<div class="buttons">
+				<div class="planet" id="b">
+					<input type="image" src="images/planets/bgrey.png" class="imgbutton" id="bgrey_button" onClick="toggleTransit(b, {showConj: false}, conj_bc, 'b_button'); audioContext.resume();" />
+					<input type="image" src="images/planets/b.png" class="imgbutton hidden" id="b_button" onClick="toggleTransit(b, {showConj: false}, conj_bc, 'b_button');" />
+				</div>
+				<div class="planet" id="c">
+					<input type="image" src="images/planets/cgrey.png" class="imgbutton" id="cgrey_button" onClick="toggleTransit(c, conj_bc, conj_cd, 'c_button'); audioContext.resume();" />
+					<input type="image" src="images/planets/c.png" class="imgbutton hidden" id="c_button" onClick="toggleTransit(c, conj_bc, conj_cd, 'c_button');" />
+				</div>
+				<div class="planet" id="d">
+					<input type="image" src="images/planets/dgrey.png" class="imgbutton" id="dgrey_button" onClick="toggleTransit(d, conj_cd, conj_de, 'd_button'); audioContext.resume();" />
+					<input type="image" src="images/planets/d.png" class="imgbutton hidden" id="d_button" onClick="toggleTransit(d, conj_cd, conj_de, 'd_button');" />
+				</div>
+				<div class="planet" id="e">
+					<input type="image" src="images/planets/egrey.png" class="imgbutton" id="egrey_button" onClick="toggleTransit(e, conj_de, conj_ef, 'e_button'); audioContext.resume();" />
+					<input type="image" src="images/planets/e.png" class="imgbutton hidden" id="e_button" onClick="toggleTransit(e, conj_de, conj_ef, 'e_button');" />
+				</div>
+				<div class="planet" id="f">
+					<input type="image" src="images/planets/fgrey.png" class="imgbutton" id="fgrey_button" onClick="toggleTransit(f, conj_ef, conj_fg, 'f_button'); audioContext.resume();" />
+					<input type="image" src="images/planets/f.png" class="imgbutton hidden" id="f_button" onClick="toggleTransit(f, conj_ef, conj_fg, 'f_button');" />
+				</div>
+				<div class="planet" id="g">
+					<input type="image" src="images/planets/ggrey.png" class="imgbutton" id="ggrey_button" onClick="toggleTransit(g, conj_fg, conj_gh, 'g_button'); audioContext.resume();" />
+					<input type="image" src="images/planets/g.png" class="imgbutton hidden" id="g_button" onClick="toggleTransit(g, conj_fg, conj_gh, 'g_button');" />
+				</div>
+				<div class="planet" id="h">
+					<input type="image" src="images/planets/hgrey.png" class="imgbutton" id="hgrey_button" onClick="toggleTransit(h, conj_gh, {showConj: false}, 'h_button'); audioContext.resume();" />
+					<input type="image" src="images/planets/h.png" class="imgbutton hidden" id="h_button" onClick="toggleTransit(h, conj_gh, {showConj: false}, 'h_button');" />
+				</div>
+			</div>
+			<!-- Volume meter -->
+			<div class="volume_meter" id="vol1">
+				<p>VOLUME <span id="vol1_meter"></span></p>
+				<p><input id="volume" class='volumeslider' type="range" min="0" max="1" step="0.01" value="1" oninput="updateGain(value, gain_melody); " /></p>
+			</div>
+		</div>
+
+		<div class="overlay" id="beat">
+			<div class="heading" id="beat_heading">DRUMS</div>
+			<div class="buttons">
+				<div class="conjunction" id="bc">
+					<input type="image" src="images/planets/bcgrey.png" class="imgbutton" id="bcgrey_button" onclick="toggleConjunc(1, 'bc_button'); audioContext.resume();" />
+					<input type="image" src="images/planets/bc.png" class="imgbutton hidden" id="bc_button" onclick="toggleConjunc(1, 'bc_button');" />
+				</div>
+				<div class="conjunction" id="cd">
+					<input type="image" src="images/planets/cdgrey.png" class="imgbutton" id="cdgrey_button" onclick="toggleConjunc(2, 'cd_button'); audioContext.resume();" />
+					<input type="image" src="images/planets/cd.png" class="imgbutton hidden" id="cd_button" onclick="toggleConjunc(2, 'cd_button');" />
+				</div>
+				<div class="conjunction" id="de">
+					<input type="image" src="images/planets/degrey.png" class="imgbutton" id="degrey_button" onclick="toggleConjunc(3, 'de_button'); audioContext.resume();" />
+					<input type="image" src="images/planets/de.png" class="imgbutton hidden" id="de_button" onclick="toggleConjunc(3, 'de_button');" />
+				</div>
+				<div class="conjunction" id="ef">
+					<input type="image" src="images/planets/efgrey.png" class="imgbutton" id="efgrey_button" onclick="toggleConjunc(4, 'ef_button'); audioContext.resume();" />
+					<input type="image" src="images/planets/ef.png" class="imgbutton hidden" id="ef_button" onclick="toggleConjunc(4, 'ef_button');" />
+				</div>
+				<div class="conjunction" id="fg">
+					<input type="image" src="images/planets/fggrey.png" class="imgbutton" id="fggrey_button" onclick="toggleConjunc(5, 'fg_button'); audioContext.resume();" />
+					<input type="image" src="images/planets/fg.png" class="imgbutton hidden" id="fg_button" onclick="toggleConjunc(5, 'fg_button');" />
+				</div>
+				<div class="conjunction" id="gh">
+					<input type="image" src="images/planets/ghgrey.png" class="imgbutton" id="ghgrey_button" onclick="toggleConjunc(6, 'gh_button'); audioContext.resume();" />
+					<input type="image" src="images/planets/gh.png" class="imgbutton hidden" id="gh_button" onclick="toggleConjunc(6, 'gh_button');" />
+				</div>
+			</div>
+			<!-- Volume meter -->
+			<div class="volume_meter" id="vol2">
+				<p>VOLUME <span id="vol2_meter"></span></p>
+				<p><input id="volume" class='volumeslider' type="range" min="0" max="1" step="0.01" value="1" oninput="updateGain(value, gain_beat);" /></p>
+			</div>
+		</div>
+	</div>
+	<!-- Footer -->
+	<!-- <div class="footer">
+		<a href="https://github.com/algadoreo/trappist-app/" target="_blank"><img src="images/github_link.png" alt="GitHub" /></a>
+	</div> -->
+
+<!-- Javascript files -->
+<script type="text/javascript" src="js/audio.js"></script>
+<script type="text/javascript" src="js/planets.js"></script>
+<script type="text/javascript" src="js/subroutines.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/visualizer.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+/* general.css */
+
+body {
+	background-color: black;
+	font-family: "Nunito Sans", sans-serif;
+	color: white;
+	margin: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+	color: white;
+}
+.heading {
+	font-size: 20pt;
+	text-align: center;
+	padding-top: 50%;
+	margin: 10% 0;
+}
+input[type="range"] {
+	-webkit-appearance: none;
+	background-color: #333333;
+	height: 2px;
+}
+canvas {
+	width: 100%;
+}
+.hidden {
+	display: none;
+}
