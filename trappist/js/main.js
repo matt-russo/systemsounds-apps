@@ -29,7 +29,7 @@ drawContext.fillRect(0, 0, WIDTH, HEIGHT)
 
 // Draw background image
 var bgImg = new Image();
-bgImg.src = './images/background.png';
+bgImg.src = 'images/background.png';
 bgImg.onLoad = drawContext.drawImage(bgImg, 0, 0, WIDTH, HEIGHT);
 
 // Set origin to centre
@@ -39,7 +39,7 @@ drawContext.translate(WIDTH/2, HEIGHT/2);
 var starImg = new Image();
 const STAR_WIDTH = 160;
 const STAR_HEIGHT = 160;
-starImg.src = './images/TRAPPIST_Star.png';
+starImg.src = 'images/TRAPPIST_Star.png';
 starImg.onLoad = drawContext.drawImage(starImg, -STAR_WIDTH/2, -STAR_HEIGHT/2, STAR_WIDTH, STAR_HEIGHT);
 
 
