@@ -1,0 +1,34 @@
+@media (max-width: 1279px) {
+  .buttonbar {
+    /* min-width: 900px; */
+    /* width: 100%; */
+  }
+}
+
+@media (max-width: 1099px) {
+  .buttonbar {
+    /* width: 100%; */
+    /* min-width: 700px; */
+  }
+}
+
+@media (max-width: 799px) {
+  .buttonbar {
+    /* width: 100%; */
+    /* min-width: 699px; */
+  }
+}
+
+@media (max-width: 699px) {
+  .buttonbar {
+    /* width: 100%; */
+    /* min-width: 599px; */
+  }
+}
+
+@media (max-width: 499px) {
+  .buttonbar {
+    /* width: 100%; */
+    /* min-width: 399px; */
+  }
+}
