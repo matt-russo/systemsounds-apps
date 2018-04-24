@@ -5,8 +5,8 @@ body {
 
 
 .buttonbar {
-	padding: 20px;
 	display:inline-block;
+	padding: 20px;
 }
 
 .mode {
@@ -57,6 +57,9 @@ body {
 
 .speed:active {
   -webkit-transform:scale(1.25); /* Safari and Chrome */
+	-ms-transform:scale(1.25);
+	-moz-transform:scale(1.25);
+	transform: scale(1.25);
 }
 
 
