@@ -19,7 +19,7 @@
 
 		<div class="overlay" id="tempo_display">
 			<span id="tempo_heading">TEMPO</span>
-			<input id="tempo" class='temposlider' type="range" min="1" max="100" step="1" value="30" oninput="updateSpeed([star,b,c,d,e,f,g,h], value)" />
+			<input id="tempo" class='temposlider' type="range" min="1" max="100" step="1" value="30" oninput="updateSpeed([star,b,c,d,e,f,g,h], value)" alt="tempo slider" />
 			<span id="bpm_meter"></span>
 		</div>
 
@@ -27,38 +27,38 @@
 			<div class="heading" id="melody_heading">NOTES</div>
 			<div class="buttons">
 				<div class="planet" id="b">
-					<input type="image" src="images/planets/bgrey.png" class="imgbutton" id="bgrey_button" onClick="toggleTransit(b, {showConj: false}, conj_bc, 'b_button'); audioContext.resume();" />
-					<input type="image" src="images/planets/b.png" class="imgbutton hidden" id="b_button" onClick="toggleTransit(b, {showConj: false}, conj_bc, 'b_button');" />
+					<input type="image" src="images/planets/bgrey.png" class="imgbutton" id="bgrey_button" onClick="toggleTransit(b, {showConj: false}, conj_bc, 'b_button'); audioContext.resume();" alt="planet b note" />
+					<input type="image" src="images/planets/b.png" class="imgbutton hidden" id="b_button" onClick="toggleTransit(b, {showConj: false}, conj_bc, 'b_button');" alt="planet b note"/>
 				</div>
 				<div class="planet" id="c">
-					<input type="image" src="images/planets/cgrey.png" class="imgbutton" id="cgrey_button" onClick="toggleTransit(c, conj_bc, conj_cd, 'c_button'); audioContext.resume();" />
-					<input type="image" src="images/planets/c.png" class="imgbutton hidden" id="c_button" onClick="toggleTransit(c, conj_bc, conj_cd, 'c_button');" />
+					<input type="image" src="images/planets/cgrey.png" class="imgbutton" id="cgrey_button" onClick="toggleTransit(c, conj_bc, conj_cd, 'c_button'); audioContext.resume();" alt="planet c note"/>
+					<input type="image" src="images/planets/c.png" class="imgbutton hidden" id="c_button" onClick="toggleTransit(c, conj_bc, conj_cd, 'c_button');" alt="planet c note"/>
 				</div>
 				<div class="planet" id="d">
-					<input type="image" src="images/planets/dgrey.png" class="imgbutton" id="dgrey_button" onClick="toggleTransit(d, conj_cd, conj_de, 'd_button'); audioContext.resume();" />
-					<input type="image" src="images/planets/d.png" class="imgbutton hidden" id="d_button" onClick="toggleTransit(d, conj_cd, conj_de, 'd_button');" />
+					<input type="image" src="images/planets/dgrey.png" class="imgbutton" id="dgrey_button" onClick="toggleTransit(d, conj_cd, conj_de, 'd_button'); audioContext.resume();" alt="planet d note"/>
+					<input type="image" src="images/planets/d.png" class="imgbutton hidden" id="d_button" onClick="toggleTransit(d, conj_cd, conj_de, 'd_button');" alt="planet d note"/>
 				</div>
 				<div class="planet" id="e">
-					<input type="image" src="images/planets/egrey.png" class="imgbutton" id="egrey_button" onClick="toggleTransit(e, conj_de, conj_ef, 'e_button'); audioContext.resume();" />
-					<input type="image" src="images/planets/e.png" class="imgbutton hidden" id="e_button" onClick="toggleTransit(e, conj_de, conj_ef, 'e_button');" />
+					<input type="image" src="images/planets/egrey.png" class="imgbutton" id="egrey_button" onClick="toggleTransit(e, conj_de, conj_ef, 'e_button'); audioContext.resume();" alt="planet e note"/>
+					<input type="image" src="images/planets/e.png" class="imgbutton hidden" id="e_button" onClick="toggleTransit(e, conj_de, conj_ef, 'e_button');" alt="planet e note"/>
 				</div>
 				<div class="planet" id="f">
-					<input type="image" src="images/planets/fgrey.png" class="imgbutton" id="fgrey_button" onClick="toggleTransit(f, conj_ef, conj_fg, 'f_button'); audioContext.resume();" />
-					<input type="image" src="images/planets/f.png" class="imgbutton hidden" id="f_button" onClick="toggleTransit(f, conj_ef, conj_fg, 'f_button');" />
+					<input type="image" src="images/planets/fgrey.png" class="imgbutton" id="fgrey_button" onClick="toggleTransit(f, conj_ef, conj_fg, 'f_button'); audioContext.resume();" alt="planet f note"/>
+					<input type="image" src="images/planets/f.png" class="imgbutton hidden" id="f_button" onClick="toggleTransit(f, conj_ef, conj_fg, 'f_button');" alt="planet f note"/>
 				</div>
 				<div class="planet" id="g">
-					<input type="image" src="images/planets/ggrey.png" class="imgbutton" id="ggrey_button" onClick="toggleTransit(g, conj_fg, conj_gh, 'g_button'); audioContext.resume();" />
-					<input type="image" src="images/planets/g.png" class="imgbutton hidden" id="g_button" onClick="toggleTransit(g, conj_fg, conj_gh, 'g_button');" />
+					<input type="image" src="images/planets/ggrey.png" class="imgbutton" id="ggrey_button" onClick="toggleTransit(g, conj_fg, conj_gh, 'g_button'); audioContext.resume();" alt="planet g note"/>
+					<input type="image" src="images/planets/g.png" class="imgbutton hidden" id="g_button" onClick="toggleTransit(g, conj_fg, conj_gh, 'g_button');" alt="planet g note"/>
 				</div>
 				<div class="planet" id="h">
-					<input type="image" src="images/planets/hgrey.png" class="imgbutton" id="hgrey_button" onClick="toggleTransit(h, conj_gh, {showConj: false}, 'h_button'); audioContext.resume();" />
-					<input type="image" src="images/planets/h.png" class="imgbutton hidden" id="h_button" onClick="toggleTransit(h, conj_gh, {showConj: false}, 'h_button');" />
+					<input type="image" src="images/planets/hgrey.png" class="imgbutton" id="hgrey_button" onClick="toggleTransit(h, conj_gh, {showConj: false}, 'h_button'); audioContext.resume();" alt="planet h note"/>
+					<input type="image" src="images/planets/h.png" class="imgbutton hidden" id="h_button" onClick="toggleTransit(h, conj_gh, {showConj: false}, 'h_button');" alt="planet h note"/>
 				</div>
 			</div>
 			<!-- Volume meter -->
 			<div class="volume_meter" id="vol1">
 				<p>VOLUME <span id="vol1_meter"></span></p>
-				<p><input id="volume" class='volumeslider' type="range" min="0" max="1" step="0.01" value="1" oninput="updateGain(value, gain_melody); " /></p>
+				<p><input id="volume" class='volumeslider' type="range" min="0" max="1" step="0.01" value="1" oninput="updateGain(value, gain_melody); " alt="note volume slider"/></p>
 			</div>
 		</div>
 
@@ -66,34 +66,34 @@
 			<div class="heading" id="beat_heading">DRUMS</div>
 			<div class="buttons">
 				<div class="conjunction" id="bc">
-					<input type="image" src="images/planets/bcgrey.png" class="imgbutton" id="bcgrey_button" onclick="toggleConjunc(1, 'bc_button'); audioContext.resume();" />
-					<input type="image" src="images/planets/bc.png" class="imgbutton hidden" id="bc_button" onclick="toggleConjunc(1, 'bc_button');" />
+					<input type="image" src="images/planets/bcgrey.png" class="imgbutton" id="bcgrey_button" onclick="toggleConjunc(1, 'bc_button'); audioContext.resume();" alt="planets b c drum"/>
+					<input type="image" src="images/planets/bc.png" class="imgbutton hidden" id="bc_button" onclick="toggleConjunc(1, 'bc_button');" alt="planets bc drum"/>
 				</div>
 				<div class="conjunction" id="cd">
-					<input type="image" src="images/planets/cdgrey.png" class="imgbutton" id="cdgrey_button" onclick="toggleConjunc(2, 'cd_button'); audioContext.resume();" />
-					<input type="image" src="images/planets/cd.png" class="imgbutton hidden" id="cd_button" onclick="toggleConjunc(2, 'cd_button');" />
+					<input type="image" src="images/planets/cdgrey.png" class="imgbutton" id="cdgrey_button" onclick="toggleConjunc(2, 'cd_button'); audioContext.resume();" alt="planets c d drum"/>
+					<input type="image" src="images/planets/cd.png" class="imgbutton hidden" id="cd_button" onclick="toggleConjunc(2, 'cd_button');" alt="planets c d drum"/>
 				</div>
 				<div class="conjunction" id="de">
-					<input type="image" src="images/planets/degrey.png" class="imgbutton" id="degrey_button" onclick="toggleConjunc(3, 'de_button'); audioContext.resume();" />
-					<input type="image" src="images/planets/de.png" class="imgbutton hidden" id="de_button" onclick="toggleConjunc(3, 'de_button');" />
+					<input type="image" src="images/planets/degrey.png" class="imgbutton" id="degrey_button" onclick="toggleConjunc(3, 'de_button'); audioContext.resume();" alt="planets d e drum"/>
+					<input type="image" src="images/planets/de.png" class="imgbutton hidden" id="de_button" onclick="toggleConjunc(3, 'de_button');" alt="planets d e drum"/>
 				</div>
 				<div class="conjunction" id="ef">
-					<input type="image" src="images/planets/efgrey.png" class="imgbutton" id="efgrey_button" onclick="toggleConjunc(4, 'ef_button'); audioContext.resume();" />
-					<input type="image" src="images/planets/ef.png" class="imgbutton hidden" id="ef_button" onclick="toggleConjunc(4, 'ef_button');" />
+					<input type="image" src="images/planets/efgrey.png" class="imgbutton" id="efgrey_button" onclick="toggleConjunc(4, 'ef_button'); audioContext.resume();" alt="planets e f drum"/>
+					<input type="image" src="images/planets/ef.png" class="imgbutton hidden" id="ef_button" onclick="toggleConjunc(4, 'ef_button');" alt="planets e f drum"/>
 				</div>
 				<div class="conjunction" id="fg">
-					<input type="image" src="images/planets/fggrey.png" class="imgbutton" id="fggrey_button" onclick="toggleConjunc(5, 'fg_button'); audioContext.resume();" />
-					<input type="image" src="images/planets/fg.png" class="imgbutton hidden" id="fg_button" onclick="toggleConjunc(5, 'fg_button');" />
+					<input type="image" src="images/planets/fggrey.png" class="imgbutton" id="fggrey_button" onclick="toggleConjunc(5, 'fg_button'); audioContext.resume();" alt="planets f g drum"/>
+					<input type="image" src="images/planets/fg.png" class="imgbutton hidden" id="fg_button" onclick="toggleConjunc(5, 'fg_button');" alt="planets f g drum"/>
 				</div>
 				<div class="conjunction" id="gh">
-					<input type="image" src="images/planets/ghgrey.png" class="imgbutton" id="ghgrey_button" onclick="toggleConjunc(6, 'gh_button'); audioContext.resume();" />
-					<input type="image" src="images/planets/gh.png" class="imgbutton hidden" id="gh_button" onclick="toggleConjunc(6, 'gh_button');" />
+					<input type="image" src="images/planets/ghgrey.png" class="imgbutton" id="ghgrey_button" onclick="toggleConjunc(6, 'gh_button'); audioContext.resume();" alt="planets g h drum"/>
+					<input type="image" src="images/planets/gh.png" class="imgbutton hidden" id="gh_button" onclick="toggleConjunc(6, 'gh_button');" alt="planets g h drum"/>
 				</div>
 			</div>
 			<!-- Volume meter -->
 			<div class="volume_meter" id="vol2">
 				<p>VOLUME <span id="vol2_meter"></span></p>
-				<p><input id="volume" class='volumeslider' type="range" min="0" max="1" step="0.01" value="1" oninput="updateGain(value, gain_beat);" /></p>
+				<p><input id="volume" class='volumeslider' type="range" min="0" max="1" step="0.01" value="1" oninput="updateGain(value, gain_beat);" alt="drum volume slider"/></p>
 			</div>
 		</div>
 	</div>
