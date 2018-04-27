@@ -39,7 +39,7 @@ drawContext.translate(WIDTH/2, HEIGHT/2);
 var starImg = new Image();
 const STAR_WIDTH = 160;
 const STAR_HEIGHT = 160;
-starImg.src = 'images/TRAPPIST_star.png';
+starImg.src = 'images/TRAPPIST_starRed.png';
 starImg.onLoad = drawContext.drawImage(starImg, -STAR_WIDTH/2, -STAR_HEIGHT/2, STAR_WIDTH, STAR_HEIGHT);
 
 
