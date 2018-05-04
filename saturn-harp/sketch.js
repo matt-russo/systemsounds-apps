@@ -128,6 +128,9 @@ function touchStarted() {
     }
   }
   touchIsDown = true;
+  if (getAudioContext().state !== 'running') {
+  getAudioContext().resume();
+}
 }
 
 function touchEnded() {
@@ -141,6 +144,10 @@ function mousePressed() {
     autox0 = mouseX;
     autoy0 = mouseY;
   }
+
+  if (getAudioContext().state !== 'running') {
+  getAudioContext().resume();
+}
 }
 
 function playNotes() {
