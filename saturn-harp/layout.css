@@ -17,10 +17,12 @@ body {
 
 #auto_button, #autogrey_button {
 	margin-left: 2.5%;
+	outline: none;
 }
 
 #manual_button, #manualgrey_button {
 		margin-left: 1%;
+		outline: none;
 }
 
 
@@ -32,10 +34,12 @@ body {
 
 #slower_button{
 	margin-left:2%;
+	outline: none;
 }
 
 #faster_button{
 	margin-left:0.6%;
+	outline: none;
 }
 
 .harmony {
@@ -46,9 +50,11 @@ body {
 
 #major_button, #majorgrey_button{
 	margin-right: 1.5%;
+	outline: none;
 }
 #minor_button, #minorgrey_button{
 	margin-right: -0.5%;
+	outline: none;
 }
 
 
