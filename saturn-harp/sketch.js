@@ -128,9 +128,9 @@ function touchStarted() {
     }
   }
   touchIsDown = true;
-  if (getAudioContext().state !== 'running') {
-  getAudioContext().resume();
-}
+//   if (getAudioContext().state !== 'running') {
+//   getAudioContext().resume();
+// }
 }
 
 function touchEnded() {
@@ -145,9 +145,9 @@ function mousePressed() {
     autoy0 = mouseY;
   }
 
-  if (getAudioContext().state !== 'running') {
-  getAudioContext().resume();
-}
+//   if (getAudioContext().state !== 'running') {
+//   getAudioContext().resume();
+// }
 }
 
 function playNotes() {
