@@ -1,0 +1,106 @@
+/* CSS by Steven Estrella. http://www.stevenestrella.com */
+/* The .slider and .slidervertical classes are for the range inputs.
+    Set the z-index high so its on top. */
+.slider1, .slidervertical {position:absolute;left:0px;top:0px;overflow:visible;z-index:100;
+
+}
+
+/* slidershell exists only
+to provide a positioning context for the range input and other elements.*/
+.slidershell {border:0 none;position:fixed;right:-130px;top:35%;overflow:visible;
+/* margin:40px; */
+/* transform-origin: 250px 75px; */
+z-index: 2;
+transform: rotate(-90deg);
+}
+
+
+/* .slidertrack is the visible track on which the user drags the thumb button. */
+.slidertrack {border:3px outset #666;border-radius:20px;position:absolute;
+  background:#222; box-shadow: 0px 0px 4px 4px rgba(200,200,200,0.2);}
+
+/* .sliderfill adds color (or a gradient as seen here) to the track as the user
+    drags the thumb. */
+.sliderfill {border:3px solid #666;border-radius:20px;
+    position:absolute;opacity:0.2;pointer-events:none;
+    background:#666;
+    /* background: linear-gradient(90deg,#222,#ccc); */
+    background:linear-gradient(90deg,#ccc,#222);
+    }
+
+/* .sliderthumb can be any css you like including an image.
+    The dimensions must match those found in the rule for
+    input[type=range]::-webkit-slider-thumb. */
+.sliderthumb {width:150px;height:150px;
+    /* background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/358203/thumb.png');background-size: 40px 40px; */
+    background-image:url('../images/juno.png');background-size: 150px 150px;
+    /* background-position:-50px -50px;
+    background-position:0px 0px; */
+    background-repeat: no-repeat;background-color:transparent;
+    position:absolute;left:0px;top:0px;
+    border:0 none;
+    padding:0px;
+    /* margin-top:-55px; */
+    text-align:center;
+    pointer-events:none;
+}
+
+/* .slidervalue can be styled as you see fit */
+.slidervalue {width:40px;height:40px;line-height:40px;color:#fff;
+    font-family:helvetica,sans-serif;font-size:18px;
+    position:absolute;left:0px;top:0px;border:0 none;
+    padding:0px;margin:0px;text-align:center;
+    pointer-events:none;
+    visibility: hidden;
+}
+
+
+/* First we have to make transparent all the default elements of the range input.
+    We use color:transparent to eliminate the default tick marks in IE. */
+
+input[type=range]::-ms-track {
+    width:100%;height:100%;
+    -webkit-appearance:none;margin:0px;padding:0px;border:0 none;
+    background:transparent;color:transparent;overflow:visible;
+}
+input[type=range]::-moz-range-track {
+    width:100%;height:100%;
+    -moz-appearance:none;margin:0px;padding:0px;border:0 none;
+    background:transparent;color:transparent;overflow:visible;
+}
+input[type=range] {
+    width:100%;height:100%;
+    -webkit-appearance:none;margin:0px;padding:0px;border:0 none;
+    background:transparent;color:transparent;overflow:visible;
+}
+/* we need a separate rule for when the range input is to be vertical */
+input[type=range].slidervertical {
+    -webkit-appearance: slider-vertical;
+    writing-mode: bt-lr; /* IE */
+    opacity:0.01; /* needed to hide the default slider-vertical appearance */
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background:transparent;border:transparent;}
+input[type=range]:focus {outline: none;}
+
+/* Make the thumbs the same size as your custom sliderthumb.
+    they will not be visible but they will be draggable.    */
+input[type=range]::-ms-thumb {width:150px;height:150px;
+    border-radius:0px;border:0 none;background:transparent;}
+input[type=range]::-moz-range-thumb {width:150px;height:150px;
+    border-radius:0px;border:0 none;background:transparent;}
+input[type=range]::-webkit-slider-thumb {width:150px;height:150px;
+    border-radius:0px;border:0 none;background:transparent;-webkit-appearance:none;}
+
+/* microsoft IE10+ and Edge - eliminates default fills before and after thumb */
+input[type=range]::-ms-fill-lower {background:transparent;border:0 none;}
+input[type=range]::-ms-fill-upper {background:transparent;border:0 none;}
+input[type=range]::-ms-tooltip { display: none;}
+
+
+
+/* other rules you may need for page styling */
+body {font-family:sans-serif;}
+
+.slider2column, td, tr, th {width:600px;border:0 none !important;}

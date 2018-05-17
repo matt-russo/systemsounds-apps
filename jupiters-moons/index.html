@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<title>JUPITER: Rhythms To Notes</title>
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="css/slider.css">
+	<link rel="stylesheet" href="css/layout.css">
+
+	<link rel="stylesheet" href="css/mobile.css">
+
+</head>
+
+<body>
+
+
+	<div class='playButtonContainter' id='playContainer'>
+		<input type="image" src="images/play.png" id="playButton" onclick="turnOn();" alt="play"/>
+	</div>
+
+	<table class="slider2column">
+		<tr>
+			<td>
+				<div class="slidershell" id="slidershell1">
+
+					<div class="slidertrack" id="slidertrack1"></div>
+					<div class="sliderfill" id="sliderfill1"></div>
+					<div class="sliderthumb" id="sliderthumb1"></div>
+					<div class="slidervalue" id="slidervalue1">0</div>
+					<input class="slider1" id="slider1" type="range" min="0" max="13" value="0" step="0.01" oninput="showValue(value, 1, false), updateBpm(value);" onchange="showValue(value, 1, false);" />
+				</div>
+			</td>
+		</tr>
+	</table>
+
+
+	<div class="overlay" id=button_container>
+		<div class='toggleButtons' id='ioOverlay'>
+			<p class="freqLabel" id="ioFreq" style="color:#ccc"> 0 Hz </p>
+			<input type="image" src="images/buttons/iogrey_button2c.png" class="imgbutton hidden" id="ioButtongrey" onclick="toggleMoon(0)" alt="Turn on Io"/>
+			<input type="image" src="images/buttons/io_button2c.png" class="imgbutton" id="ioButton" onclick="toggleMoon(0)" alt="Turn off Io"//>
+			<canvas class="gauge" id="ioGauge2"></canvas>
+		</div>
+
+		<div class='toggleButtons' id='europaOverlay'>
+			<p class="freqLabel" id="europaFreq" style="color:#aaaaaa"> 0 Hz </p>
+			<input type="image" src="images/buttons/europagrey_button2c.png" class="imgbutton hidden" id="europaButtongrey" onclick="toggleMoon(1)" alt="Turn on Europa"/>
+			<input type="image" src="images/buttons/europa_button2c.png" class="imgbutton" id="europaButton" onclick="toggleMoon(1)" alt="Turn off Europa"/>
+			<canvas class="gauge" id="europaGauge2"></canvas>
+		</div>
+
+		<div class='toggleButtons' id='ganymedeOverlay'>
+			<p class="freqLabel" id="ganymedeFreq" style="color:#aaaaaa"> 0 Hz </p>
+			<input type="image" src="images/buttons/ganymedegrey_button.png" class="imgbutton hidden" id="ganymedeButtongrey" onclick="toggleMoon(2)" alt="Turn on Ganymede"/>
+			<input type="image" src="images/buttons/ganymede_button2.png" class="imgbutton" id="ganymedeButton" onclick="toggleMoon(2)" alt="Turn off Ganymede"/>
+			<canvas class="gauge" id="ganymedeGauge2"></canvas>
+		</div>
+
+		<div class='toggleButtons' id='callistoOverlay'>
+			<p class="freqLabel" id="callistoFreq" style="color:#aaaaaa"> 0 Hz </p>
+			<input type="image" src="images/buttons/callistogrey_button.png" class="imgbutton hidden" id="callistoButtongrey" onclick="toggleMoon(3)" alt="Turn on Callisto"/>
+			<input type="image" src="images/buttons/callisto_button2.png" class="imgbutton" id="callistoButton" onclick="toggleMoon(3)" alt="Turn off Callisto"/>
+			<canvas class="gauge" id="callistoGauge2"></canvas>
+		</div>
+	</div>
+
+	<div class='resetContainter' id='resetContainer'>
+		<input type="image" src="images/reset.png" id="resetButton" onclick="reset();" alt="reset"/>
+	</div>
+
+	<div class='blackOverlay' id='blackOverlay'>.</div>
+
+
+	<div id="canvas"></div>
+
+	<script src="libraries/three.min.js"></script>
+	<script src="libraries/OrbitControls.js"></script>
+	<script src="libraries/TrailRenderer.js"></script>
+	<script src="libraries/Tone.min.js"></script>
+	<script src="libraries/gauge.js"></script>
+	<script src="libraries/jquery-3.3.1.min.js"></script>
+	<script src="libraries/StartAudioContext.js"></script>
+
+	<script src="js/audio.js"></script>
+	<script src="js/objects.js"></script>
+	<script src="js/trails.js"></script>
+	<script src="js/subroutines.js"></script>
+	<script src="js/controls.js"></script>
+	<script src="js/gauges.js"></script>
+	<script src="js/slider.js"></script>
+	<script src="js/keyboard.js"></script>
+	<script src="js/sketch.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+/* p {
+  @include fluid-type(font-size, 600px, 1200px, 16px, 32px);
+} */
+
+
+
+@media (max-width: 1279px) {
+  #playButton {
+  	left:25%;
+  	width:50%;
+  }
+  #button_container{
+    width: 25%; /* Full width (cover the whole page) */
+    top: 18%;
+  	margin-left: 1%;
+    max-width:300px;
+  	min-width:200px;
+  }
+
+  .slidershell {
+  right:-130px;
+  top:35%;
+  }
+
+}
+@media (max-width: 1099px) {
+  #playButton {
+  	left:30%;
+  	width:40%;
+  }
+
+  #button_container{
+    width: 20%; /* Full width (cover the whole page) */
+    top: 10%;
+    margin-left:1%;
+    max-width:260px;
+    min-width:180px;
+  }
+
+  .slidershell {
+  right:-100px;
+  top:30%;
+  }
+
+}
+@media (max-width: 799px) {
+  #playButton {
+  	left:30%;
+  	width:40%;
+  }
+
+  #button_container{
+    width: 25%; /* Full width (cover the whole page) */
+    top: 10%;
+    margin-left:2%;
+    max-width:260px;
+    min-width:200px;
+  }
+  #resetButton {
+    visibility:hidden;
+  }
+  .slidershell {
+  right:-80px;
+  top:30%;
+  }
+
+}
+@media (max-width: 699px) {
+  #playButton {
+  	left:34%;
+  	width:40%;
+  }
+  #button_container{
+    width: 25%; /* Full width (cover the whole page) */
+    top: 10%;
+    margin-left:2%;
+    max-width:260px;
+    min-width:180px;
+  }
+
+  .slidershell {
+  right:-90px;
+  top:30%;
+  }
+}
+@media (max-width: 599px) {
+  #playButton {
+    left:32%;
+    width:40%;
+  }
+  #button_container{
+    width: 25%; /* Full width (cover the whole page) */
+    top: 10%;
+    margin-left:2%;
+    max-width:260px;
+    min-width:160px;
+  }
+  .slidershell {
+  right:-90px;
+  top:30%;
+  }
+}
+@media (max-width: 499px) {
+  #playButton {
+  	left:25%;
+  	width:40%;
+    top:5%;
+  }
+
+  #button_container{
+    width: 25%; /* Full width (cover the whole page) */
+    top: 20%;
+    margin-left:2%;
+    max-width:260px;
+    min-width:160px;
+  }
+
+  .slidershell {
+  right:-80px;
+  top:25%;
+  }
+}

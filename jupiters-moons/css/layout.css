@@ -1,0 +1,174 @@
+/*
+/////////////////////////////
+Color Pallette
+
+Yellow: 1, .83,.52 =  255, 212, 132 = #FFD484
+Teal: 0,1,0.8 = 0, 255, 204   = #00ffcc
+Blue: 0.6,.7,1  = 153,178,255 = #99B2FF
+Violet: .9,.6,1  = 229,153,255 = #E599FF
+////////////////////////////
+*/
+
+body {
+		background-color: black;
+}
+
+/*////////////////////////////////////////////////////////*/
+.playButtonContainter {
+  position: absolute; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  z-index: 4;
+}
+#playButton {
+	display:block;
+	position: fixed;
+	top:25%;
+	left:25%;
+	width:50%;
+	outline: none;
+}
+
+.resetContainter {
+  position: absolute; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  z-index: 1;
+}
+#resetButton {
+	display:block;
+	position: fixed;
+	bottom:1%;
+	right:3%;
+	width:6%;
+	outline: none;
+	min-width: 50px;
+	opacity: 0.5;
+}
+/*////////////////////////////////////////////////////////*/
+
+
+#button_container{
+  position: fixed; /* Sit on top of the page content */
+  display: inline-block; /* Hidden by default */
+  width: 25%; /* Full width (cover the whole page) */
+  top: 18%;
+	margin-left: 1%;
+  z-index: 2;
+  max-width:260px;
+	min-width:200px;
+	/* background-color: #aaa; */
+}
+
+.imgbutton {
+  width:35%;
+	outline: none;
+	position:relative;
+	transition: box-shadow 0.3s ease;
+	border-radius:100%;
+}
+.gauge {
+  padding-bottom:3%;
+  width: 35%;
+	position:relative;
+	margin-top:5%;
+}
+
+#ioButton {
+	box-shadow: 0px 0px 7px 7px rgba(255, 212, 132,0.5);
+}
+#ioButton, #ioButtongrey{
+	width:23%;
+	left:6.5%;
+}
+#ioGauge2 {
+	left:12%;
+}
+
+#europaButton {
+	box-shadow: 0px 0px 4px 2px rgba(0, 255, 204,0.4);
+	background-color: rgba(0, 255, 204,.4);
+}
+#europaButton, #europaButtongrey{
+	width:25%;
+	left:5%;
+}
+#europaGauge2 {
+	left:8%;
+}
+
+#ganymedeButton {
+	box-shadow: 0px 0px 7px 7px rgba(153,178,255,0.4);
+	background-color: rgba(153,178,255,0.4);
+}
+#ganymedeButton, #ganymedeButtongrey{
+	width:35%;
+	left:0%;
+}
+#ganymedeGauge2 {
+	left:2%;
+}
+
+#callistoButton {
+	box-shadow: 0px 0px 5px 3px rgba(229,153,255,0.4);
+	background-color: rgba(229,153,255,0.4);
+}
+#callistoButton, #callistoButtongrey{
+	width:35%;
+	left:0%;
+}
+#callistoGauge2 {
+	left:2%;
+}
+
+
+.overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: inline-block;
+    width: 100%; /* Full width (cover the whole page) */
+    top: 15%;
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+
+
+.freqLabel {
+  margin-top:2%;
+  margin-bottom:-6%;
+  position:relative;
+
+  left:45%;
+  font-size:2.2vw;
+  font-family: 'Arial';
+  font-weight: bold;
+}
+
+
+
+
+.blackOverlay {
+	position:fixed;
+	width:100%;
+	width:1920px;
+	height:1090px;
+	background-color: black;
+	z-index:1;
+	margin-top:-15px;
+	margin-top:-1%;
+	margin-left:-1%;
+}
+
+#canvas {
+	position:relative;
+	width:100%;
+	margin-top:-1%;
+	margin-left:-1%;
+	z-index:0;
+}
+
+
+.hidden {
+	display: none;
+}
+
+.hidden2 {
+  visibility:hidden; /*preserves layout */
+}
