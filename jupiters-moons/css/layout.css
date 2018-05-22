@@ -43,6 +43,21 @@ body {
 	min-width: 50px;
 	opacity: 0.5;
 }
+
+#videoButton {
+	display:block;
+	position: fixed;
+	bottom:3%;
+	left:3%;
+	width:6%;
+	outline: none;
+	min-width: 50px;
+	color:white;
+	font-size: 22px;
+	font-weight:bold;
+	opacity: 0.5;
+	z-index: 1;
+}
 /*////////////////////////////////////////////////////////*/
 
 
