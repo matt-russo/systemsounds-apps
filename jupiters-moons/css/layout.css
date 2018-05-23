@@ -48,8 +48,9 @@ body {
 	display:block;
 	position: fixed;
 	bottom:3%;
-	right:3%;
-	width:10%;
+	right:4%;
+	width:8%;
+	padding-right:5%;
 	outline: none;
 	background-color: transparent;
 	background-repeat:no-repeat;
@@ -69,7 +70,7 @@ body {
 	display:block;
 	position: fixed;
 	bottom:3%;
-	left:3%;
+	left:4%;
 	width:6%;
 	outline: none;
 	color:white;
