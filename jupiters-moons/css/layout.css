@@ -50,7 +50,8 @@ body {
 	bottom:3%;
 	right:4%;
 	width:8%;
-	padding-right:5%;
+	margin-right:3%;
+
 	outline: none;
 	background-color: transparent;
 	background-repeat:no-repeat;
@@ -70,7 +71,7 @@ body {
 	display:block;
 	position: fixed;
 	bottom:3%;
-	left:4%;
+	left:5%;
 	width:6%;
 	outline: none;
 	color:white;
