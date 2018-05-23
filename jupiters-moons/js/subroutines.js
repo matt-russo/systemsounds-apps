@@ -2,7 +2,7 @@ function makeOsc(moon_arr) {
   moon_arr.forEach(function(moon) {
     moon.osc = new Tone.Oscillator().toMaster();
     StartAudioContext(moon.osc.context , "#playButton");
-
+    
     moon.osc.type = "square";  //sine, triangle or square
     // moon.osc.type = "sine4";  //sine, triangle or square
     if (moon.osc.type=="square") {moon.osc.frequency.value = moon.freq * 60. / twoPI/2 ;}

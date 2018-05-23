@@ -44,6 +44,27 @@ body {
 	opacity: 0.5;
 }
 
+#resetButton2 {
+	display:block;
+	position: fixed;
+	bottom:3%;
+	right:3%;
+	width:8%;
+	outline: none;
+	background-color: transparent;
+	background-repeat:no-repeat;
+	border: none;
+	cursor:pointer;
+	overflow: hidden;
+	color:white;
+	/* font-size: 22px; */
+	font-size:2.1vw;
+  font-family: 'Arial';
+	font-weight:bold;
+	opacity: 0.5;
+	z-index: 1;
+}
+
 #videoButton {
 	display:block;
 	position: fixed;
@@ -51,9 +72,10 @@ body {
 	left:3%;
 	width:6%;
 	outline: none;
-	min-width: 50px;
 	color:white;
-	font-size: 22px;
+	/* font-size: 22px; */
+	font-size:2.1vw;
+  font-family: 'Arial';
 	font-weight:bold;
 	opacity: 0.5;
 	z-index: 1;
