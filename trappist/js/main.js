@@ -53,12 +53,20 @@ function draw() {
 	drawContext.drawImage(bgImg, -WIDTH/2, -HEIGHT/2, WIDTH, HEIGHT);
 	drawContext.globalAlpha = 1;
 
+	// Draw transit line
+	drawContext.fillStyle = 'white';
+	drawContext.globalAlpha = .03;
+	drawContext.fillRect(0, -2, 350, 4);
+	drawContext.globalAlpha = 1;
+
 	// Draw star
 	drawContext.save();
 	star.theta += star.freq;
 	drawContext.rotate(-star.theta);
 	drawContext.drawImage(starImg, -STAR_WIDTH/2, -STAR_HEIGHT/2, STAR_WIDTH, STAR_HEIGHT);
 	drawContext.restore();
+
+
 
 
 	// Draw planet h
