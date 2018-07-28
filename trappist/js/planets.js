@@ -19,13 +19,13 @@ class Planet {
 }
 
 // Create planets
-var b = new Planet(false, -2.006, 1.51, 2, 56, 'Red', b_BUFFER);
-var c = new Planet(false, 2.582, 2.42, 2, 77, 'Gold', c_BUFFER);
+var b = new Planet(false, -2.006, 1.5109, 2, 56, 'Red', b_BUFFER);
+var c = new Planet(false, 2.582, 2.4218, 2, 77, 'Gold', c_BUFFER);
 var d = new Planet(false, -0.224, 4.05, 2, 108, 'ForestGreen', d_BUFFER);
 var e = new Planet(false, 0.003, 6.10, 2, 142, 'LightSkyBlue', e_BUFFER);
-var f = new Planet(false, -0.866, 9.21, 2, 187, 'CornflowerBlue', f_BUFFER);
-var g = new Planet(false, 1.290, 12.35, 2, 227, 'Pink', g_BUFFER);
-var h = new Planet(false, 0.176, 18.76, 2, 300, 'RebeccaPurple', h_BUFFER);
+var f = new Planet(false, -0.866, 9.2056, 2, 187, 'CornflowerBlue', f_BUFFER);
+var g = new Planet(false, 1.290, 12.3545, 2, 227, 'Pink', g_BUFFER);
+var h = new Planet(false, 0.176, 18.768, 2, 300, 'RebeccaPurple', h_BUFFER);
 
 // Create objects to handle conjunctions
 var conj_bc = {dtheta: 2*Math.PI - (b.theta - c.theta), dfreq: b.freq - c.freq, showConj: false, conjBuffer: bcConj_BUFFER};
