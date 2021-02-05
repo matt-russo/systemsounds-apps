@@ -88,7 +88,7 @@ gain_melody.connect(audioContext.destination);
 gain_melody.connect(analyser);
 
 gain_beat = audioContext.createGain();
-gain_beat.gain.value = 1;
+gain_beat.gain.value = 0.4;
 gain_beat.connect(audioContext.destination);
 gain_beat.connect(analyser);
 
