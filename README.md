@@ -1,2 +1,2 @@
 # systemsounds-apps
-A repo for web apps published at system-sounds.com
+A repo for the Knox College Visualization of Sound and Sonification of Light's Sonification Project!
