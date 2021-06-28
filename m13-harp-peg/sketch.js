@@ -24,7 +24,7 @@ var touchIsDown = false;
 
 // preload background and cursor images
 function preload() {
-  img = loadImage("./images/BRing.jpg");
+  img = loadImage("./images/M13.jpg");
   img2 = loadImage("./images/BRing2.jpg");
   cassiniImg = loadImage("./images/cassini.png");
   soundFormats('mp3');
