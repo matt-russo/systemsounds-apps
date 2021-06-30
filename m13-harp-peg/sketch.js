@@ -7,7 +7,7 @@ var minValue = 30; // minimum pixel value to count as a note
 var step = (256. - minValue) / nNotes; // pixel value step size
 var pixNum = 0, pixNum0 = 0, lastPixNum = 0, lastPixNum0 = 0;
 
-var mode, harmony;
+var mode, harmony, update;
 var notesMajor = [];
 var notesMinor = [];
 
@@ -26,9 +26,10 @@ var touchIsDown = false;
 function preload() {
   img = loadImage("./images/M13.jpg");
   img2 = loadImage("./images/BRing2.jpg");
+  img3 = loadImage("./images/test.jpg");
+  img4 = loadImage("./images/M13_2.jpg");
   cassiniImg = loadImage("./images/cassini.png");
   soundFormats('mp3');
-
 }
 
 
@@ -40,8 +41,9 @@ function setup() {
   cnv.id('cassinicanvas');
 
   background(0);
-  img.loadPixels();
-  image(img, 0, 0);
+  img.loadPixels();  // Loads image for sound to be played
+  img4.loadPixels();
+  image(img, 0, 0);   // Sets starting display image
 
   cassini = new cursorIm(0, 0);
   cassiniAuto = new autoCursor(0, 0);
@@ -58,20 +60,23 @@ function draw() {
 
   document.getElementById('buttonbar').setAttribute("style", "width:100%");
 
-  if (harmony == 'major') {
-    image(img, 0, 0, imWidth / imScale, imHeight / imScale);
+  if (harmony == 'major' && update) {
+    image(img, 0, 0, imWidth / imScale, imHeight / imScale);  // Sets displayed image
+    activeImg = img;  // Sets image for sonification
   }
-  if (harmony == 'minor') {
-    image(img2, 0, 0, imWidth / imScale, imHeight / imScale);
+  if (harmony == 'minor' && update) {
+    image(img, 0, 0, imWidth / imScale, imHeight / imScale);  // Sets displayed image
+    activeImg = img4; // Sets image for sonification
   }
 
   if (mode == 'manual') {
     if (mouseIsPressed || touchIsDown) {
 
       // find current pixel number and pixel value https://p5js.org/reference/#/p5/pixels
-      pixNum = 4 * (Math.round(mouseX * imScale) + Math.round(mouseY * imScale) * imWidth); //labels pixel
-      pixValue = (img.pixels[pixNum] + img.pixels[pixNum + 1] + img.pixels[pixNum + 2]) / 3.;
-      pixValue = Math.pow(pixValue / 256, 1.5) * 256; //scale brightness
+      // pixNum = 4 * (Math.round(mouseX * imScale) + Math.round(mouseY * imScale) * imWidth); //labels pixel
+      // pixValue = (img3.pixels[pixNum] + img3.pixels[pixNum + 1] + img3.pixels[pixNum + 2]) / 3.;
+      // pixValue = Math.pow(pixValue / 256, 1.5) * 256; //scale brightness
+      pixValue = calcPixValue(mouseX, mouseY);
 
       if (pixNum != lastPixNum) {
         playNotes(); // trigger note for this pixel value
@@ -90,10 +95,11 @@ function draw() {
     checkBounce(); // check for bouncing off walls
 
     // find current pixel number and pixel value
-    pixNum0 = Math.round(autox * imScale) + Math.round(autoy * imScale) * imWidth;
-    pixNum = Math.round(4 * pixNum0); //labels pixel
-    pixValue = (img.pixels[pixNum] + img.pixels[pixNum + 1] + img.pixels[pixNum + 2]) / 3.;
-    pixValue = Math.pow(pixValue / 256, 1.5) * 256; //scale brightness
+    // pixNum0 = Math.round(autox * imScale) + Math.round(autoy * imScale) * imWidth;
+    // pixNum = Math.round(4 * pixNum0); //labels pixel
+    // pixValue = (img.pixels[pixNum] + img.pixels[pixNum + 1] + img.pixels[pixNum + 2]) / 3.;
+    // pixValue = Math.pow(pixValue / 256, 1.5) * 256; //scale brightness
+    pixValue = calcPixValue(autox, autoy);
 
     if (pixNum0 != lastPixNum0) {
       playNotes(); // trigger note for this pixel value
@@ -166,6 +172,15 @@ function playNotes() {
   }
 }
 
+function calcPixValue(coordX, coordY) {
+  pixNum0 = Math.round(coordX * imScale) + Math.round(coordY * imScale) * imWidth;
+  pixNum = Math.round(4 * pixNum0); //labels pixel
+  pixValue = (activeImg.pixels[pixNum] + activeImg.pixels[pixNum + 1] + activeImg.pixels[pixNum + 2]) / 3.;
+  pixValue = Math.pow(pixValue / 256, 1.5) * 256; //scale brightness
+
+  return pixValue
+}
+
 
 function checkBounce() {
   if (autox >= imWidth / imScale || autox < 0) {
@@ -214,15 +229,18 @@ function makeManual() {
 
 function makeMinor() {
   harmony = 'minor';
+  update = true;
 
   document.getElementById('minorgrey_button').classList.add("hidden");
   document.getElementById('minor_button').classList.remove("hidden");
   document.getElementById('majorgrey_button').classList.remove("hidden");
   document.getElementById('major_button').classList.add("hidden");
+
 }
 
 function makeMajor() {
   harmony = 'major';
+  update = true;
 
   document.getElementById('majorgrey_button').classList.add("hidden");
   document.getElementById('major_button').classList.remove("hidden");
