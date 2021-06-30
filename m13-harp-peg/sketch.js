@@ -68,7 +68,7 @@ function draw() {
   if (mode == 'manual') {
     if (mouseIsPressed || touchIsDown) {
 
-      // find current pixel number and pixel value
+      // find current pixel number and pixel value https://p5js.org/reference/#/p5/pixels
       pixNum = 4 * (Math.round(mouseX * imScale) + Math.round(mouseY * imScale) * imWidth); //labels pixel
       pixValue = (img.pixels[pixNum] + img.pixels[pixNum + 1] + img.pixels[pixNum + 2]) / 3.;
       pixValue = Math.pow(pixValue / 256, 1.5) * 256; //scale brightness
