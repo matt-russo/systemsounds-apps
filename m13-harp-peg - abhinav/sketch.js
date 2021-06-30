@@ -260,7 +260,7 @@ function cursorIm(x, y) {
 
   this.show = function() {
     var imScale = .8;
-    image(cassiniImg, this.x - imScale * astronautImg.width * 0.5, this.y - imScale * astronautImg.height * 0.75, imScale * cassiniImg.width, imScale * cassiniImg.height);
+    image(astronautImg, this.x - imScale * astronautImg.width * 0.5, this.y - imScale * astronautImg.height * 0.75, imScale * astronautImg.width, imScale * astronautImg.height);
 
   }
 }
