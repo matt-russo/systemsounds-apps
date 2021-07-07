@@ -2,10 +2,10 @@ var imWidth = 1959, imHeight = 1000; // hard coded image dimensions
 var cnv; // canvas
 var imScale; // used to adjust canvas size based on window size
 
-var nNotes = 15; // number of note steps   */
+var nNotes = 14; // number of note steps   */
 var minValue = 30; // minimum pixel value to count as a note
 var step = (256. - minValue) / nNotes; // pixel value step size
-var pixNum = 0, pixNum0 = 0, lastPixNum = 0, lastPixNum0 = 0;
+var pixNum = 0, pixNum0 = 0, lastPixValue = 0, lastPixValue0 = 0;
 
 var mode, harmony, update;
 var notesMajor = [];
@@ -18,17 +18,16 @@ var maxSpeed = 26; // doublings of 0.1 gets to 25.6
 var minSpeed = 0.01; // halvings of 0.1 gets to .0125
 var speedSign = 1;   // initial direction (positive is downwards)
 
-var cassini, cassiniAuto;
+var hubble, hubbleAuto;
 
 var touchIsDown = false;
 
 // preload background and cursor images
 function preload() {
-  img = loadImage("./images/M13.jpg");
+  img = loadImage("./images/ngc6633_crop.jpg");
   img2 = loadImage("./images/BRing2.jpg");
-  img3 = loadImage("./images/test.jpg");
-  img4 = loadImage("./images/M13_2.jpg");
-  cassiniImg = loadImage("./images/cassini.png");
+  hubbleImg = loadImage("./images/hubble_2_0.png");
+  // https://science.nasa.gov/toolkits/spacecraft-icons
   soundFormats('mp3');
 }
 
@@ -42,11 +41,11 @@ function setup() {
 
   background(0);
   img.loadPixels();  // Loads image for sound to be played
-  img4.loadPixels();
+  //img4.loadPixels(); // Uncomment for second image
   image(img, 0, 0);   // Sets starting display image
 
-  cassini = new cursorIm(0, 0);
-  cassiniAuto = new autoCursor(0, 0);
+  hubble = new cursorIm(0, 0);
+  hubbleAuto = new autoCursor(0, 0);
 
   init(); // load all sound files and set initial mode and harmony
 }
@@ -67,7 +66,7 @@ function draw() {
   }
   if (harmony == 'minor' && update) {
     image(img, 0, 0, imWidth / imScale, imHeight / imScale);  // Sets displayed image
-    activeImg = img4; // Sets image for sonification
+    activeImg = img; // Sets image for sonification
     //update = false;
   }
 
@@ -80,13 +79,13 @@ function draw() {
       // pixValue = Math.pow(pixValue / 256, 1.5) * 256; //scale brightness
       pixValue = calcPixValue(mouseX, mouseY);
 
-      if (pixNum != lastPixNum) {
+      if (pixValue != lastPixValue) {
         playNotes(); // trigger note for this pixel value
       }
-      lastPixNum = pixNum;
+      lastPixValue = pixValue;
 
-      cassini.update(mouseX, mouseY); // update cursor postion
-      cassini.show();
+      hubble.update(mouseX, mouseY); // update cursor postion
+      hubble.show();
     }
   }
 
@@ -103,13 +102,13 @@ function draw() {
     // pixValue = Math.pow(pixValue / 256, 1.5) * 256; //scale brightness
     pixValue = calcPixValue(autox, autoy);
 
-    if (pixNum0 != lastPixNum0) {
+    if (pixValue0 != lastPixValue0) {
       playNotes(); // trigger note for this pixel value
     }
-    lastPixNum0 = pixNum0;
+    lastPixValue0 = pixValue0;
 
-    cassiniAuto.update(autox, autoy); // update cursor
-    cassiniAuto.show();
+    hubbleAuto.update(autox, autoy); // update cursor
+    hubbleAuto.show();
   }
 }
 
@@ -178,7 +177,9 @@ function calcPixValue(coordX, coordY) {
   pixNum0 = Math.round(coordX * imScale) + Math.round(coordY * imScale) * imWidth;
   pixNum = Math.round(4 * pixNum0); //labels pixel
   pixValue = (activeImg.pixels[pixNum] + activeImg.pixels[pixNum + 1] + activeImg.pixels[pixNum + 2]) / 3.;
-  pixValue = Math.pow(pixValue / 256, 1.5) * 256; //scale brightness
+
+  // Keep line below commented to have linear scaling
+  //pixValue = Math.pow(pixValue / 256, 1.5) * 256; //scale brightness
 
   return pixValue
 }
@@ -260,9 +261,9 @@ function autoCursor(x, y) {
     this.x = autox;
     this.y = autoy;
   }
-  var imScale = .8;
+  var imScale = .6;
   this.show = function() {
-    image(cassiniImg, this.x - imScale * cassiniImg.width * 0.5, this.y - imScale * cassiniImg.height * 0.75, imScale * cassiniImg.width, imScale * cassiniImg.height);
+    image(hubbleImg, this.x - imScale * hubbleImg.width * 0.5, this.y - imScale * hubbleImg.height * 0.75, imScale * hubbleImg.width, imScale * hubbleImg.height);
 
   }
 }
@@ -279,8 +280,8 @@ function cursorIm(x, y) {
   }
 
   this.show = function() {
-    var imScale = .8;
-    image(cassiniImg, this.x - imScale * cassiniImg.width * 0.5, this.y - imScale * cassiniImg.height * 0.75, imScale * cassiniImg.width, imScale * cassiniImg.height);
+    var imScale = .6;
+    image(hubbleImg, this.x - imScale * hubbleImg.width * 0.5, this.y - imScale * hubbleImg.height * 0.75, imScale * hubbleImg.width, imScale * hubbleImg.height);
 
   }
 }
