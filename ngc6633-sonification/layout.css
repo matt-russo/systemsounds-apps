@@ -29,11 +29,11 @@ body {
 .speed {
 	position:relative;
 	margin-top:1.5%;
-	width:10%;
+	width:8%;
 }
 
 #slower_button{
-	margin-left:2%;
+	margin-left:1%;
 	outline: none;
 }
 
@@ -44,16 +44,20 @@ body {
 
 .harmony {
 	float:right;
-	width:20%;
+	width:18%;
 
 }
 
-#major_button, #majorgrey_button{
-	margin-right: 1.5%;
+#tunes_button, #tunes_g_button{
+	margin-right: 1%;
 	outline: none;
 }
-#minor_button, #minorgrey_button{
-	margin-right: -0.5%;
+#chords_button, #chords_g_button{
+	margin-right: 0.5%;
+	outline: none;
+}
+#lux_button, #lux_g_button {
+	margin-right: 0%;
 	outline: none;
 }
 
